@@ -14,6 +14,11 @@ import { useQueryParam, useQueryParamOrStorage } from '@/composable/queryParams'
 
 const { t } = useI18n();
 
+// Read the current route so the component can detect the raw embed mode from the URL query.
+const route = useRoute();
+// When ?raw=true is present, only the bare QR code is rendered (useful for embedding in an iframe).
+const isRawMode = computed(() => route.query.raw === 'true');
+
 const foreground = useQueryParamOrStorage({ name: 'fg', storageName: 'qr-code-gen:fg', defaultValue: '#000000ff' });
 const background = useQueryParamOrStorage({ name: 'bg', storageName: 'qr-code-gen:bg', defaultValue: '#ffffffff' });
 const errorCorrectionLevelSelectValue = useQueryParamOrStorage<string>({ name: 'level', storageName: 'qr-code-gen:level', defaultValue: 'medium' });
@@ -52,7 +57,7 @@ const dotTypes = ['dots',
 const cornersDotTypes = ['dot', 'square', 'heart'];
 const cornersSquareTypes = ['dot', 'square', 'extra-rounded'];
 
-const text = useQueryParam({ tool: 'qr-code-gen', name: 'text', defaultValue: 'https://vbutiu-dev-tools.vercel.app' });
+const text = useQueryParam({ tool: 'qr-code-gen', name: 'text', defaultValue: 'https://vbutiu.github.io/dev-tools/' });
 const { qrcode } = useQRCodeStyling({
   text,
   color: { background, foreground },
@@ -148,7 +153,7 @@ async function copyQRCode() {
 <template>
   <c-card>
     <n-grid x-gap="12" y-gap="12" cols="1 600:3">
-      <n-gi span="2">
+      <n-gi v-if="!isRawMode" span="2">
         <c-input-text
           v-model:value="text"
           label-position="left"
@@ -258,10 +263,14 @@ async function copyQRCode() {
           </details>
         </c-card>
       </n-gi>
-      <n-gi>
-        <div flex flex-col items-center gap-3>
+      <n-gi :span="isRawMode ? 3 : 1">
+        <!-- QR image stays visible in every mode; only its container styling changes for raw embed mode -->
+        <div
+          flex flex-col items-center gap-3
+          :class="isRawMode ? 'justify-center min-h-screen w-full bg-white' : ''"
+        >
           <n-image :src="qrcode" width="250" />
-          <div flex gap-3>
+          <div v-if="!isRawMode" flex gap-3>
             <c-button @click="copyQRCode">
               {{ isCopied ? 'Copied!' : 'Copy' }}
               <icon-mdi-check v-if="isCopied" ml-2 style="color: #10b981;" />
@@ -274,20 +283,22 @@ async function copyQRCode() {
           </div>
         </div>
 
-        <n-divider />
+        <div v-if="!isRawMode">
+          <n-divider />
 
-        <n-checkbox v-model:checked="smallTerminal">
-          {{ t('tools.qr-code-generator.texts.tag-small-terminal') }}
-        </n-checkbox>
-        <n-form-item :label="t('tools.qr-code-generator.texts.label-terminal-output')" mt-1>
-          <TextareaCopyable
-            :value="qrcodeTerminal"
-            multiline
-            rows="5"
-            mb-1 mt-1
-            copy-placement="outside"
-          />
-        </n-form-item>
+          <n-checkbox v-model:checked="smallTerminal">
+            {{ t('tools.qr-code-generator.texts.tag-small-terminal') }}
+          </n-checkbox>
+          <n-form-item :label="t('tools.qr-code-generator.texts.label-terminal-output')" mt-1>
+            <TextareaCopyable
+              :value="qrcodeTerminal"
+              multiline
+              rows="5"
+              mb-1 mt-1
+              copy-placement="outside"
+            />
+          </n-form-item>
+        </div>
       </n-gi>
     </n-grid>
   </c-card>
