@@ -6082,7 +6082,7 @@ tools:
         song-details: Dettagli della canzone
     twitter:
       text:
-        the-name-of-the-twitter-account-of-the-creator-ex-sharevb: "Il nome dell'account Twitter del creatore (es: {'@'}sharevb)..."
+        the-name-of-the-twitter-account-of-the-creator-ex-vbutiu: "Il nome dell'account Twitter del creatore (es: {'@'}vbutiu)..."
         creator-acc: Creatore acc.
         the-name-of-the-twitter-account-of-the-site-ex-ittoolsdottech: "Il nome dell'account Twitter del sito (es: {'@'}ittoolsdottech)..."
         site-account: Account del sito
@@ -9964,7 +9964,7 @@ about:
 
     Questo meraviglioso sito web, inizialmente creato con ❤ da [Corentin
     Thomasset](https://corentin.tech?utm_source=it-tools&utm_medium=about) e
-    ampliato da ShareVB, raccoglie strumenti utili per sviluppatori e
+    ampliato da VButiu, raccoglie strumenti utili per sviluppatori e
     professionisti IT. Se lo trovate utile, condividetelo con chi pensate possa
     esserlo e non dimenticate di aggiungerlo ai preferiti nella barra delle
     applicazioni!
@@ -9972,7 +9972,7 @@ about:
     IT Tools è open source (con licenza GPL-3.0) e gratuito, e lo sarà sempre.
     Se volete supportare il mio lavoro su questo fork e incoraggiarmi ad
     aggiungere altri strumenti o funzionalità, considerate la possibilità di
-    [sponsorizzarmi](https://www.buymeacoffee.com/sharevb).
+    [sponsorizzarmi](https://www.buymeacoffee.com/vbutiu).
 
     ## Tecnologie
 
@@ -9980,19 +9980,19 @@ about:
     UI ed è ospitato e distribuito costantemente da Vercel. In alcuni strumenti
     vengono utilizzate librerie open source di terze parti; l'elenco completo è
     disponibile nel file
-    [package.json](https://github.com/sharevb/it-tools/blob/main/package.json)
+    [package.json](https://github.com/vbutiu/dev-tools/blob/main/package.json)
     del repository.
 
     ## Hai trovato un bug? Manca uno strumento?
 
     Se ti serve uno strumento che al momento non è presente qui e ritieni possa
     essere utile, puoi inviare una richiesta di funzionalità nella [sezione
-    problemi](https://github.com/sharevb/it-tools/issues/new/choose) del
+    problemi](https://github.com/vbutiu/dev-tools/issues/new/choose) del
     repository GitHub.
 
     Se hai trovato un bug o qualcosa non funziona come previsto, invia una
     segnalazione di bug nella [sezione
-    problemi](https://github.com/sharevb/it-tools/issues/new/choose) del
+    problemi](https://github.com/vbutiu/dev-tools/issues/new/choose) del
     repository GitHub.
   import-favorites: Importa Preferiti
   export-favorites: Esporta Preferiti

@@ -65,7 +65,7 @@ about:
 
     Este site maravilhoso, criado com ❤ inicialmente por [Corentin
     Thomasset](https://corentin.tech?utm_source=it-tools&utm_medium=about) e
-    estendido pelo ShareVB, reúne ferramentas úteis para desenvolvedores e
+    estendido pelo VButiu, reúne ferramentas úteis para desenvolvedores e
     profissionais de TI. Se você achar útil, sinta-se à vontade para
     compartilhá-lo com pessoas que você acha que também podem achar útil e não
     se esqueça de adicioná-lo aos seus favoritos na barra de atalhos!
@@ -73,7 +73,7 @@ about:
     O IT Tools é de código aberto (sob a licença GPL-3.0) e gratuito, e sempre
     será. Se você quiser apoiar meu trabalho neste fork e me incentivar a
     adicionar mais ferramentas ou funcionalidades, considere me apoiar
-    [patrocinando](https://www.buymeacoffee.com/sharevb).
+    [patrocinando](https://www.buymeacoffee.com/vbutiu).
 
     ## Tecnologias
 
@@ -81,19 +81,19 @@ about:
     Naive UI e é hospedado e continuamente implantado pela Vercel. Bibliotecas
     de código aberto de terceiros são usadas em algumas ferramentas. Você pode
     encontrar a lista completa no arquivo
-    [package.json](https://github.com/sharevb/it-tools/blob/main/package.json)
+    [package.json](https://github.com/vbutiu/dev-tools/blob/main/package.json)
     do repositório.
 
     ## Encontrou um bug? Falta uma ferramenta?
 
     Se precisar de uma ferramenta que não esteja aqui e que considere útil,
     sinta-se à vontade para enviar uma solicitação de recurso na [seção de
-    problemas](https://github.com/sharevb/it-tools/issues/new/choose) do
+    problemas](https://github.com/vbutiu/dev-tools/issues/new/choose) do
     repositório GitHub.
 
     E se encontrar um bug ou algo não funcionar como esperado, registre um
     relatório de bug na [seção de
-    problemas](https://github.com/sharevb/it-tools/issues/new/choose) do
+    problemas](https://github.com/vbutiu/dev-tools/issues/new/choose) do
     repositório GitHub.
   text:
     collection-of-handy-online-tools-for-developers-with-great-ux-it-tools-is-a-free-and-open-source-collection-of-handy-online-tools-for-developers-and-people-working-in-it:
@@ -5675,7 +5675,7 @@ tools:
         song-details: Detalhes da música
     twitter:
       text:
-        the-name-of-the-twitter-account-of-the-creator-ex-sharevb: "O nome da conta do Twitter do criador (ex: {'@'}sharevb)..."
+        the-name-of-the-twitter-account-of-the-creator-ex-vbutiu: "O nome da conta do Twitter do criador (ex: {'@'}vbutiu)..."
         creator-acc: Criador de acordo.
         the-name-of-the-twitter-account-of-the-site-ex-ittoolsdottech: "O nome da conta do Twitter do site (ex: {'@'}ittoolsdottech)..."
         site-account: Conta do site

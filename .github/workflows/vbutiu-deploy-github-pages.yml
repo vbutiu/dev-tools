@@ -1,14 +1,12 @@
-name: Deploy static content to Pages
+name: Deploy to GitHub Pages
 
 env:
   VITE_VERCEL_ENV: production
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["chore/all-my-stuffs"]
-
-  # Allows you to run this workflow manually from the Actions tab
+    branches:
+      - main
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -18,17 +16,12 @@ permissions:
   id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,16 +32,18 @@ jobs:
         with:
           node-version: 24
 
-      - uses: pnpm/action-setup@v6.0.9
-        name: Install pnpm
-        id: pnpm-install
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6.0.9
         with:
           run_install: true
 
+      # This project is Vite/Vue (not Nuxt): build output is BASE_URL-driven `dist/`, not `.output/public`.
+      # Set the repository variable BASE_URL (e.g. "/dev-tools/") under Settings > Secrets and variables > Actions > Variables.
       - name: Build
         run: |
-          BASE_URL="/it-tools/" pnpm build
+          BASE_URL="${{ vars.BASE_URL }}" pnpm build
           cp dist/index.html dist/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v6.0.0
 
@@ -57,6 +52,16 @@ jobs:
         with:
           path: './dist'
 
-      - name: Deploy to GitHub Pages
-        id: deployment
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - id: deployment
+        name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v5.0.0

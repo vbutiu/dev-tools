@@ -66,7 +66,7 @@ about:
 
     Diese wunderbare Website, ursprünglich mit ❤ von [Corentin
     Thomasset](https://corentin.tech?utm_source=it-tools&utm_medium=about)
-    erstellt und durch ShareVB erweitert, bietet nützliche Tools für Entwickler
+    erstellt und durch VButiu erweitert, bietet nützliche Tools für Entwickler
     und IT-Beschäftigte. Wenn Sie sie nützlich finden, teilen Sie sie gerne mit
     anderen, die sie Ihrer Meinung nach ebenfalls nützlich finden könnten, und
     vergessen Sie nicht, sie in Ihrer Shortcut-Leiste zu speichern!
@@ -75,7 +75,7 @@ about:
     es auch immer bleiben. Wenn Sie meine Arbeit an diesem Fork unterstützen und
     mich ermutigen möchten, weitere Tools und Funktionen hinzuzufügen,
     unterstützen Sie mich bitte durch ein
-    [Sponsoring](https://www.buymeacoffee.com/sharevb).
+    [Sponsoring](https://www.buymeacoffee.com/vbutiu).
 
     ## Technologien
 
@@ -83,19 +83,19 @@ about:
     erstellt und von Vercel gehostet und kontinuierlich bereitgestellt. Einige
     Tools verwenden Open-Source-Bibliotheken von Drittanbietern. Die
     vollständige Liste finden Sie in der Datei
-    [package.json](https://github.com/sharevb/it-tools/blob/main/package.json)
+    [package.json](https://github.com/vbutiu/dev-tools/blob/main/package.json)
     des Repositorys.
 
     ## Fehler gefunden? Fehlt ein Tool?
 
     Wenn Sie ein Tool benötigen, das hier derzeit nicht vorhanden ist und Ihrer
     Meinung nach nützlich sein könnte, können Sie gerne einen Funktionsantrag im
-    Abschnitt [Probleme](https://github.com/sharevb/it-tools/issues/new/choose)
+    Abschnitt [Probleme](https://github.com/vbutiu/dev-tools/issues/new/choose)
     des GitHub-Repositorys einreichen.
 
     Und wenn Sie einen Fehler gefunden haben oder etwas nicht wie erwartet
     funktioniert, reichen Sie bitte einen Fehlerbericht im Abschnitt
-    [Probleme](https://github.com/sharevb/it-tools/issues/new/choose) des
+    [Probleme](https://github.com/vbutiu/dev-tools/issues/new/choose) des
     GitHub-Repositorys ein.
   text:
     collection-of-handy-online-tools-for-developers-with-great-ux-it-tools-is-a-free-and-open-source-collection-of-handy-online-tools-for-developers-and-people-working-in-it:
@@ -6240,7 +6240,7 @@ tools:
         song-details: Songdetails
     twitter:
       text:
-        the-name-of-the-twitter-account-of-the-creator-ex-sharevb: Der Name des Twitter-Kontos des Erstellers (z. B. {'@'}sharevb) ...
+        the-name-of-the-twitter-account-of-the-creator-ex-vbutiu: Der Name des Twitter-Kontos des Erstellers (z. B. {'@'}vbutiu) ...
         creator-acc: Ersteller-Konto
         the-name-of-the-twitter-account-of-the-site-ex-ittoolsdottech: Der Name des Twitter-Kontos der Site (z. B. {'@'}ittoolsdottech) ...
         site-account: Site-Konto

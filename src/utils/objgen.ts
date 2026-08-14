@@ -1,6 +1,6 @@
 // ! objgen.js
 // ! version : 4.0.4
-// ! authors : Jim Winfield, js contributors, typescripted by ShareVB
+// ! authors : Jim Winfield, js contributors, typescripted by VButiu
 // ! license : AGPL-3.0
 
 const rawLineRegx = /^.*$|\n|$/g;

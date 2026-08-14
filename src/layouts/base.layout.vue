@@ -65,7 +65,7 @@ const tools = computed<ToolCategory[]>(() => [
           <div>
             IT-Tools
 
-            <c-link target="_blank" rel="noopener" :href="`https://github.com/sharevb/it-tools/tree/v${version}`">
+            <c-link target="_blank" rel="noopener" :href="`https://github.com/vbutiu/dev-tools/tree/v${version}`">
               v{{ version }}
             </c-link>
 
@@ -75,7 +75,7 @@ const tools = computed<ToolCategory[]>(() => [
                 target="_blank"
                 rel="noopener"
                 type="primary"
-                :href="`https://github.com/sharevb/it-tools/tree/${commitSha}`"
+                :href="`https://github.com/vbutiu/dev-tools/tree/${commitSha}`"
               >
                 {{ commitSha }}
               </c-link>
@@ -131,7 +131,7 @@ const tools = computed<ToolCategory[]>(() => [
         <c-tooltip position="bottom" :tooltip="$t('home.support')">
           <c-button
             round
-            href="https://www.buymeacoffee.com/sharevb"
+            href="https://www.buymeacoffee.com/vbutiu"
             rel="noopener"
             target="_blank"
             class="support-button"

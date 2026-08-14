@@ -20,7 +20,7 @@ Some text
 
 Some text
 
-### Title with Link [TOC](http://sharevb-it-tools.vercel.app)
+### Title with Link [TOC](http://vbutiu-dev-tools.vercel.app)
 
 \`\`\`
 ## some bash code

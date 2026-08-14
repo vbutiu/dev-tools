@@ -5953,7 +5953,7 @@ tools:
         song-details: Sangdetaljer
     twitter:
       text:
-        the-name-of-the-twitter-account-of-the-creator-ex-sharevb: "Navnet på skaberens Twitter-konto (f.eks.: {'@'}sharevb)..."
+        the-name-of-the-twitter-account-of-the-creator-ex-vbutiu: "Navnet på skaberens Twitter-konto (f.eks.: {'@'}vbutiu)..."
         creator-acc: Skabertilslutning
         the-name-of-the-twitter-account-of-the-site-ex-ittoolsdottech: "Navnet på webstedets Twitter-konto (f.eks.: {'@'}ittoolsdottech)..."
         site-account: Webstedskonto
@@ -9783,7 +9783,7 @@ about:
 
     Denne vidunderlige hjemmeside, lavet med ❤ oprindeligt af [Corentin
     Thomasset](https://corentin.tech?utm_source=it-tools&utm_medium=about) og
-    udvidet af ShareVB, samler nyttige værktøjer til udviklere og folk, der
+    udvidet af VButiu, samler nyttige værktøjer til udviklere og folk, der
     arbejder inden for IT. Hvis du finder det nyttigt, er du velkommen til at
     dele det med folk, du tror, kan finde det nyttigt, og glem ikke at bogmærke
     det i din genvejslinje!
@@ -9791,7 +9791,7 @@ about:
     IT Tools er open source (under GPL-3.0-licensen) og gratis, og vil altid
     være det. Hvis du vil støtte mit arbejde på denne fork og opfordre mig til
     at tilføje flere værktøjer eller funktionaliteter, kan du overveje at støtte
-    ved at [sponsorere mig](https://www.buymeacoffee.com/sharevb).
+    ved at [sponsorere mig](https://www.buymeacoffee.com/vbutiu).
 
     ## Teknologier
 
@@ -9799,7 +9799,7 @@ about:
     hostes og implementeres løbende af Vercel. Tredjeparts open
     source-biblioteker bruges i nogle værktøjer. Du kan finde den komplette
     liste i filen
-    [package.json](https://github.com/sharevb/it-tools/blob/main/package.json) i
+    [package.json](https://github.com/vbutiu/dev-tools/blob/main/package.json) i
     repository'et.
 
     ## Har du fundet en fejl? Mangler der et værktøj?
@@ -9807,12 +9807,12 @@ about:
     Hvis du har brug for et værktøj, der ikke findes her i øjeblikket, og som du
     mener kan være nyttigt, er du velkommen til at indsende en
     funktionsanmodning i
-    [issues-sektionen](https://github.com/sharevb/it-tools/issues/new/choose) i
+    [issues-sektionen](https://github.com/vbutiu/dev-tools/issues/new/choose) i
     GitHub-repository'et.
 
     Og hvis du har fundet en fejl, eller noget ikke fungerer som forventet,
     bedes du indsende en fejlrapport i
-    [issues-sektionen](https://github.com/sharevb/it-tools/issues/new/choose) i
+    [issues-sektionen](https://github.com/vbutiu/dev-tools/issues/new/choose) i
     GitHub-repository'et.
   import-favorites: Importér favoritter
   export-favorites: Eksportér favoritter

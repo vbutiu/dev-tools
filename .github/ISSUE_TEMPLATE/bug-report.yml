@@ -2,7 +2,7 @@ name: 🐞 Bug Report
 description: File a bug report.
 labels: ['bug', 'triage']
 assignees:
-  - sharevb
+  - vbutiu
 body:
   - type: markdown
     attributes:
@@ -41,7 +41,7 @@ body:
     attributes:
       label: Where did you encounter the bug?
       options:
-        - Public app (sharevb-it-tools.vercel.app)
+        - Public app (vbutiu-dev-tools.vercel.app)
         - A self hosted
         - Other (installations, docker, etc.)
     validations:

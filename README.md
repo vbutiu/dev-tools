@@ -1,11 +1,3 @@
-## BREAKING CHANGE for Container Image
-
-Since the _base image_ is now `nginx-unpriviledged` the container will now listen to port **8080** and not 80. So you need to update your port mapping, i.e. from `8080:80` to `8080:8080`.
-
-You can override listening port using environment variable `PORT` (docker option `-e PORT=8888`).
-
-If the container needs to listen to IPv6, it needs to be enabled: https://serverfault.com/questions/1147296/how-to-enable-ipv6-on-ubuntu-20-04. Alternatively, you can mount your own `nginx.conf` own using docker option `-v "./nginx.conf:/etc/nginx/templates/default.conf.template"` (with `listen [::]:8080;` removed)
-
 ## Build requirements
 
 **To build this project**, you need around **16GB** (as it builds on Github workers). Below, you will get some `out of memory` or `node allocation failed`.
@@ -14,27 +6,15 @@ If the container needs to listen to IPv6, it needs to be enabled: https://server
 
 Especially for UI improvements and translation. And for anything else.
 
-Want to support this fork of IT Tools: [Buy me a coffee](https://www.buymeacoffee.com/sharevb)
+Want to support this fork of IT Tools: [Buy me a coffee](https://www.buymeacoffee.com/vbutiu)
 
 ## HTTPS is recommended
 
-Some tools like PGP encryption rely on WebCrypto API that is only available in HTTPS/SSL. Also, if you want to use PWA, HTTPS is required.
+Some tools like PGP encryption rely on WebCrypto API that is only available in HTTPS/SSL. Also, if you want to use PWA, HTTPS is required. GitHub Pages serves over HTTPS by default.
 
-So even on internal installations, you should enable HTTPS using Let's Encrypt using DNS Challenge
+### Check out these change here: <https://vbutiu.github.io/dev-tools/>
 
-Some docs about DNS Challenge:
-
-- https://medium.com/@life-is-short-so-enjoy-it/homelab-nginx-proxy-manager-setup-ssl-certificate-with-domain-name-in-cloudflare-dns-732af64ddc0b
-- https://doc.traefik.io/traefik/user-guides/docker-compose/acme-dns/
-- https://medium.com/@svenvanginkel/traefik-letsencrypt-dns01-challenge-with-ovhcloud-52f2a2c6d08a
-
-Related doc for CyberPanel: https://community.cyberpanel.net/t/reverse-proxy-traffic-to-docker-container-on-cyberpanel/30644
-
-### Check out these change here: <https://sharevb-it-tools.vercel.app/> or <https://sharevb.github.io/it-tools/>
-
-You can use my image in your docker-compose/quadlet file if you want an up-to-date version of it-tools (with my PR and some of others) until the main branch has been updated.
-
-- github action triggers on every push to this branch - [view package here](https://github.com/sharevb/it-tools/pkgs/container/it-tools)
+- github action triggers on every push to `main` - [view workflow here](https://github.com/vbutiu/dev-tools/tree/main/.github/workflows/vbutiu-deploy-github-pages.yml)
 
 (Thanks to [gitmotion](https://github.com/gitmotion/it-tools) for this model of README fork)
 
@@ -42,7 +22,7 @@ You can use my image in your docker-compose/quadlet file if you want an up-to-da
 
 Big thanks to all the people who have already contributed!
 
-[![contributors](https://contrib.rocks/image?repo=sharevb/it-tools&refresh=1)](https://github.com/sharevb/it-tools/graphs/contributors)
+[![contributors](https://contrib.rocks/image?repo=vbutiu/dev-tools&refresh=1)](https://github.com/vbutiu/dev-tools/graphs/contributors)
 
 ## Development under Windows
 
@@ -53,233 +33,29 @@ Use of WSL2 is recommended to develop using VSCode on Windows. Direct developmen
 - Almost [all tools PR, 192 of mine, of original it-tools](https://github.com/CorentinTh/it-tools/pulls)
 - 95% of [issues if original it-tools](https://github.com/CorentinTh/it-tools/issues)
 - Full UI translation in many language (Google Translated)
-- Many [new tools](https://sharevb-it-tools.vercel.app/about)
+- Many [new tools](https://vbutiu.github.io/dev-tools/about)
 - Many bug fixes and enhancements
-- Many customizations (Docker version), see below
 
-## Container images
+## Deploy to GitHub Pages
 
-[GitHub Container Registry](https://github.com/sharevb/it-tools/pkgs/container/it-tools): `ghcr.io/sharevb/it-tools:latest`
+This repo is deployed with [.github/workflows/vbutiu-deploy-github-pages.yml](.github/workflows/vbutiu-deploy-github-pages.yml) on every push to `main` (or manually via `workflow_dispatch`).
 
-[Docker Hub](https://hub.docker.com/r/sharevb/it-tools): `sharevb/it-tools:latest`
+To deploy your own fork:
 
-```bash
-docker run --pull always --restart unless-stopped -p 8080:8080 sharevb/it-tools:latest
-```
+1. Enable GitHub Pages build and deployment in **Settings** > **Pages**, and select **GitHub Actions** as the source.
+2. Set the repository variable `BASE_URL` (e.g. `/dev-tools/`) under **Settings** > **Secrets and variables** > **Actions** > **Variables**, matching your GitHub Pages subpath.
+3. Push to `main` or trigger the workflow manually.
 
-Other existing docker tags: `latest-en` (english only)
+## Customization
 
-## Use in Docker Compose file
+You can customize the app at build time by editing files in `public/` before building:
 
-```yml
-services:
-  it-tools:
-    container_name: it-tools
-    image: sharevb/it-tools:latest
-    pull_policy: always
-    restart: unless-stopped
-    ports:
-      - 8080:8080
-```
+- `public/home.custom.md`: adds custom content to the Home page.
+- `public/tools-filter.json`: filters available tools/categories using regex (`excludeCategoryFilterRegex`, `includeCategoryFilterRegex`, `excludeToolsFilterRegex`, `includeToolsFilterRegex`).
+- `public/external-tools.json`: adds custom external tools (`href` or `markdownContent`).
+- `public/tools-settings.json`: sets default tool parameters and the default UI language (`default_locale`), keyed by `tool name` then `parameter name`, matching the `useQueryParam`/`useITStorage` calls in each tool's source under `src/tools`.
 
-## Use in Podman Quadlet file
 
-```
-[Unit]
-Description=IT Tools container
-After=network-online.target
-
-[Container]
-AutoUpdate=registry
-Image=ghcr.io/sharevb/it-tools:latest
-PublishPort=8080:8080
-Label=io.containers.autoupdate=registry
-
-[Install]
-WantedBy=multi-user.target default.target
-
-[Service]
-Restart=always
-```
-
-## Use with companion Self Hosted docker services
-
-Some tools requires additional docker services: HTTPS/DNS tools/Ping, HTML to PDF, Docker Image Download, Multi Links Download, Short Url Expander and TCP/UDP Port tester.
-
-See complete example here: [docker-with-services](https://github.com/sharevb/it-tools/tree/chore/all-my-stuffs/docker-with-services)
-
-## Filter tools and add home custom content
-
-You can add custom content in Home page by mounting a `home.custom.md` in `/usr/share/nginx/html`.
-
-You can filter available tools by mounting `tools-filter.json` in `/usr/share/nginx/html`. It can contains the following filtering regex:
-
-```json
-{
-  "excludeCategoryFilterRegex": "",
-  "includeCategoryFilterRegex": "",
-  "excludeToolsFilterRegex": "",
-  "includeToolsFilterRegex": ""
-}
-```
-
-Category matches on category (English) names ; Tools matches on tools path/url.
-
-See [docker-tools-filter-and-home-content](https://github.com/sharevb/it-tools/tree/chore/all-my-stuffs/docker-tools-filter-and-home-content)
-
-## Add custom external tools
-
-You can add custom external tools (href or markdownContent) by mounting a `external-tools.json` in `/usr/share/nginx/html` with the following structure:
-
-```json
-[
-  {
-    "name": "GitHub",
-    "path": "/github",
-    "description": "Link to Github",
-    "keywords": ["github"],
-    "category": "Links",
-    "href": "https://github.com"
-  },
-  {
-    "name": "Some text",
-    "path": "/some-text",
-    "description": "Some description",
-    "keywords": ["some"],
-    "category": "Links",
-    "markdownContent": "Some useful **text**\n\nin *markdown*"
-  }
-]
-```
-
-See [docker-tools-filter-and-home-content](https://github.com/sharevb/it-tools/tree/chore/all-my-stuffs/docker-tools-filter-and-home-content)
-
-## Setting default tools parameters / default UI language at runtime
-
-For a complete sample, see [docker-with-services](https://github.com/sharevb/it-tools/tree/chore/all-my-stuffs/docker-with-services).
-
-You can set default tool parameters by mounting a `tools-settings.json` in `/usr/share/nginx/html`.
-
-It is a two level json, with the first level being for `tool name` and the second level for `parameter name`:
-
-```json
-{
-  "regex-tester": {
-    "multi": true,
-    "regex": "some regex",
-    "global": false
-  }
-}
-```
-
-You can find `tool name` and `parameter name` in the tools source code `src/tools` subfolder :
-
-- example pattern for `const global = useQueryParamOrStorage({ storageName: 'regex-tester:g', name: 'global', defaultValue: true });`:
-
-```json
-{
-  "regex-tester": {
-    "global": false
-  }
-}
-```
-
-- example pattern for `const value = useQueryParam({ tool: 'barcode-gen', name: 'text', defaultValue: '123456789' });`:
-
-```json
-{
-  "barcode-gen": {
-    "text": "4356"
-  }
-}
-```
-
-- example pattern for `const width = useITStorage('ascii-text-drawer:width', 80);`:
-
-```json
-{
-  "ascii-text-drawer": {
-    "width": 80
-  }
-}
-```
-
-To define the default UI language, add a `default_locale` key to json:
-
-```json
-{
-  "default_locale": "fr"
-}
-```
-
-## To build using a custom default language:
-
-```
-docker build -t it-tools-fr --build-arg VITE_LANGUAGE=fr .
-docker run -d --name it-tools-fr --restart unless-stopped -p 8080:8080 it-tools-fr
-```
-
-## Build container image for a custom subfolder
-
-According to https://github.com/sharevb/it-tools/pull/461#issuecomment-1602506049 and https://github.com/CorentinTh/it-tools/pull/461:
-
-```
-docker build -t it-tools  --build-arg BASE_URL="/my-folder/" .
-docker run -d --name it-tools --restart unless-stopped -p 8080:8080 it-tools
-```
-
-Then if you go to `http://localhost:8080` you'll get a blank page, but opening the DevTools (& refreshing) you'll notice in the Network tab that the app is trying to fetch assets from `/my-folder/...`
-
-So you would need to put another server in front of it, like [Nginx Proxy Manager](https://nginxproxymanager.com/), [Traefik](https://traefik.io/traefik/), [caddy](https://caddyserver.com/) etc. Then setup a reverse proxy pass using `/my-folder`
-
-## Docker compose for hosting in a `/it-tools/` subfolder
-
-For `/it-tools/` subfolder, you can use `baseurl-it-tools` tag.
-
-See [sample of docker-compose.yml and nginx.conf](https://github.com/sharevb/it-tools/tree/chore/all-my-stuffs/docker-subfolder-sample), this docker image needs to have another reverse proxy in front of it, like [Nginx Proxy Manager](https://nginxproxymanager.com/), [Traefik](https://traefik.io/traefik/), [caddy](https://caddyserver.com/) etc.
-
-Setup a reverse proxy pass using `/it-tools/`. And you should be able to access it-tools in `/it-tools/` of your server.
-
-An example of nginx reverse proxy configuration is available at: https://github.com/sharevb/it-tools/tree/chore/all-my-stuffs/docker-subfolder-sample
-
-To run the sample:
-
-```bash
-git clone https://github.com/sharevb/it-tools
-cd it-tools/docker-subfolder-sample/
-docker compose up
-```
-
-Then navigate to http://localhost:8080/it-tools/
-
-## To build using a custom folder:
-
-1. `BASE_URL="/it-tools/" pnpm build`
-2. Rename the generated `dist` folder to `it-tools` and serve on `https://your-domain.com/it-tools`
-
-## To build for GitHub Pages:
-
-1. Enable GitHub Pages build and deployment option in your fork, under **Settings** > **Pages** and select **GitHub Actions** as the source
-2. Add the following GitHub action to your repo: https://github.com/sharevb/it-tools/tree/chore/all-my-stuffs/.github/workflows/sharevb-github-pages-publish.yml
-
-## To add authentication
-
-Assuming you're already hosting it-tools behind a reverse proxy, you can configure forward-auth and enforce authentication from the reverse proxy
-
-- [Official guides](https://docs.goauthentik.io/docs/add-secure-apps/providers/proxy/server_nginx) with nginx. Guides with other reverse proxy setups are available
-- [Step-by-step setup guide with nginx-proxy-manager](https://geekscircuit.com/set-up-authentik-sso-with-nginx-proxy-manager/)
-
-(thanks @jogerj)
-
-## Deploy as LXC container
-
-In Proxmox VE, you can use docker image directly:
-
-```bash
-sudo lxc-create -n sharevb-it-tools -t oci -- --url docker://ghcr.io/sharevb/it-tools:latest
-```
-
-## Contribute
 
 ### Recommended IDE Setup
 
@@ -373,13 +149,11 @@ It will create a directory in `src/tools` with the correct files. You will need 
 
 ## Installation methods
 
-Local installation required installing first: `python3 make g++`
+Local installation requires installing first: `python3 make g++`
 
-| Container Image                                                                                                                                                                    | Local Installation                                                                                                                                                                                               |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| GitHub Container Registry: <span title="triple click me!">`ghcr.io/sharevb/it-tools:latest`</span><br/>Docker Hub: <span title="triple click me!">`sharevb/it-tools:latest`</span> | <span title="triple click me!">`sudo apt-get install python3 make g++ && git clone -b chore/all-my-stuffs https://github.com/sharevb/it-tools.git && cd it-tools/ && pnpm i --ignore-scripts && pnpm dev`</span> |
-| replace your current image with this image                                                                                                                                         | copy & paste oneliner (from github repo)                                                                                                                                                                         |
-| You may need to clear cache and hard reload to get new features loading                                                                                                            | Installing packages for the first time may take some time; please wait until it finishes                                                                                                                         |
+```bash
+sudo apt-get install python3 make g++ && git clone -b main https://github.com/vbutiu/dev-tools.git && cd dev-tools/ && pnpm i --ignore-scripts && pnpm dev
+```
 
 <picture>
     <source srcset="./.github/logo-dark.png" media="(prefers-color-scheme: light)">

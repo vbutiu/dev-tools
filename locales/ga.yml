@@ -67,7 +67,7 @@ about:
     Tá uirlisí úsáideacha comhiomlánaithe ag an suíomh Gréasáin iontach seo,
     arna chruthú le ❤ ar dtús ag [Corentin
     Thomasset](https://corentin.tech?utm_source=it-tools&utm_medium=about) agus
-    arna leathnú ag ShareVB, do fhorbróirí agus do dhaoine atá ag obair in TF.
+    arna leathnú ag VButiu, do fhorbróirí agus do dhaoine atá ag obair in TF.
     Má fhaigheann tú é úsáideach, bíodh leisce ort é a roinnt le daoine a
     cheapann tú a d'fhéadfadh a bheith úsáideach dóibh freisin agus ná déan
     dearmad é a leabharmharcáil i do bharra aicearra!
@@ -76,7 +76,7 @@ about:
     aisce, agus beidh sé i gcónaí. Más mian leat tacú le mo chuid oibre ar an
     bhforc seo, agus mé a spreagadh chun níos mó uirlisí nó feidhmiúlachtaí a
     chur leis, smaoinigh ar thacaíocht a thabhairt trí [urraíocht a dhéanamh
-    orm](https://www.buymeacoffee.com/sharevb).
+    orm](https://www.buymeacoffee.com/vbutiu).
 
     ## Teicneolaíochtaí
 
@@ -84,7 +84,7 @@ about:
     Naive UI agus tá sé á óstáil agus á imscaradh go leanúnach ag Vercel.
     Úsáidtear leabharlanna foinse oscailte tríú páirtí i roinnt uirlisí,
     féadfaidh tú an liosta iomlán a fháil sa chomhad
-    [package.json](https://github.com/sharevb/it-tools/blob/main/package.json)
+    [package.json](https://github.com/vbutiu/dev-tools/blob/main/package.json)
     den stórlann.
 
     ## An bhfuair tú fabht? An bhfuil uirlis ar iarraidh?
@@ -92,12 +92,12 @@ about:
     Más gá duit uirlis nach bhfuil i láthair anseo faoi láthair, agus má
     cheapann tú go bhféadfadh sí a bheith úsáideach, is féidir leat iarratas gné
     a chur isteach sa [rannán
-    saincheisteanna](https://github.com/sharevb/it-tools/issues/new/choose) sa
+    saincheisteanna](https://github.com/vbutiu/dev-tools/issues/new/choose) sa
     stórlann GitHub.
 
     Agus má fuair tú fabht, nó mura n-oibríonn rud éigin mar a bhíothas ag súil
     leis, comhdaigh tuarascáil fabht sa [rannán
-    saincheisteanna](https://github.com/sharevb/it-tools/issues/new/choose) sa
+    saincheisteanna](https://github.com/vbutiu/dev-tools/issues/new/choose) sa
     stórlann GitHub.
   text:
     collection-of-handy-online-tools-for-developers-with-great-ux-it-tools-is-a-free-and-open-source-collection-of-handy-online-tools-for-developers-and-people-working-in-it:
@@ -6469,7 +6469,7 @@ tools:
         song-details: Sonraí an amhráin
     twitter:
       text:
-        the-name-of-the-twitter-account-of-the-creator-ex-sharevb: "Ainm chuntas Twitter an chruthaitheora (m.sh.: {'@'}sharevb)..."
+        the-name-of-the-twitter-account-of-the-creator-ex-vbutiu: "Ainm chuntas Twitter an chruthaitheora (m.sh.: {'@'}vbutiu)..."
         creator-acc: Cunt cruthaitheora.
         the-name-of-the-twitter-account-of-the-site-ex-ittoolsdottech: "Ainm chuntas Twitter an tsuímh (m.sh.: {'@'}ittoolsdottech)..."
         site-account: Cuntas suímh

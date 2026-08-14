@@ -53,7 +53,7 @@ export const useCommandPaletteStore = (locale: string) =>
       },
       {
         name: t('tools.command-palette.store.texts.github-repository'),
-        href: 'https://github.com/sharevb/it-tools',
+        href: 'https://github.com/vbutiu/dev-tools',
         category: t('tools.command-palette.store.texts.external'),
         description: t('tools.command-palette.store.texts.view-the-source-code-of-it-tools-on-github'),
         keywords: ['github', 'repo', 'repository', 'source', 'code'],
@@ -62,7 +62,7 @@ export const useCommandPaletteStore = (locale: string) =>
       {
         name: t('tools.command-palette.store.texts.report-a-bug-or-an-issue'),
         description: t('tools.command-palette.store.texts.report-a-bug-or-an-issue-to-help-improve-it-tools'),
-        href: 'https://github.com/sharevb/it-tools/issues/new/choose',
+        href: 'https://github.com/vbutiu/dev-tools/issues/new/choose',
         category: t('tools.command-palette.store.texts.actions-0'),
         keywords: ['report', 'issue', 'bug', 'problem', 'error'],
         icon: BugIcon,

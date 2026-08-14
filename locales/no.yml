@@ -65,7 +65,7 @@ about:
 
     Denne fantastiske nettsiden, laget med ❤, opprinnelig av [Corentin
     Thomasset](https://corentin.tech?utm_source=it-tools&utm_medium=about) og
-    utvidet av ShareVB, samler nyttige verktøy for utviklere og folk som jobber
+    utvidet av VButiu, samler nyttige verktøy for utviklere og folk som jobber
     innen IT. Hvis du synes den er nyttig, kan du gjerne dele den med folk du
     tror kan synes den er nyttig også, og ikke glem å bokmerke den i
     snarveilinjen din!
@@ -73,14 +73,14 @@ about:
     IT Tools er åpen kildekode (under GPL-3.0-lisensen) og gratis, og vil alltid
     være det. Hvis du vil støtte arbeidet mitt på denne fork, og oppmuntre meg
     til å legge til flere verktøy eller funksjoner, kan du vurdere å støtte ved
-    å [sponse meg](https://www.buymeacoffee.com/sharevb).
+    å [sponse meg](https://www.buymeacoffee.com/vbutiu).
 
     ## Teknologier
 
     IT Tools er laget i Vue.js (Vue 3) med Naive UI-komponentbiblioteket og
     driftes og distribueres kontinuerlig av Vercel. Tredjepartsbiblioteker med
     åpen kildekode brukes i noen verktøy. Du finner den komplette listen i filen
-    [package.json](https://github.com/sharevb/it-tools/blob/main/package.json) i
+    [package.json](https://github.com/vbutiu/dev-tools/blob/main/package.json) i
     depotet.
 
 
@@ -88,12 +88,12 @@ about:
 
     Hvis du trenger et verktøy som ikke finnes her, og du tror kan være nyttig,
     kan du sende inn en funksjonsforespørsel i
-    [problemseksjonen](https://github.com/sharevb/it-tools/issues/new/choose) i
+    [problemseksjonen](https://github.com/vbutiu/dev-tools/issues/new/choose) i
     GitHub-depotet.
 
     Og hvis du fant en feil, eller noe ikke fungerer som forventet, kan du sende
     inn en feilrapport i
-    [problemseksjonen](https://github.com/sharevb/it-tools/issues/new/choose) i
+    [problemseksjonen](https://github.com/vbutiu/dev-tools/issues/new/choose) i
     GitHub-depotet.
 
   text:
@@ -5997,7 +5997,7 @@ tools:
         song-details: Sangdetaljer
     twitter:
       text:
-        the-name-of-the-twitter-account-of-the-creator-ex-sharevb: "Navnet på Twitter-kontoen til skaperen (f.eks.: {'@'}sharevb)..."
+        the-name-of-the-twitter-account-of-the-creator-ex-vbutiu: "Navnet på Twitter-kontoen til skaperen (f.eks.: {'@'}vbutiu)..."
         creator-acc: Skapertilhørighet
         the-name-of-the-twitter-account-of-the-site-ex-ittoolsdottech: "Navnet på nettstedets Twitter-konto (f.eks.: {'@'}ittoolsdottech)..."
         site-account: Nettstedskonto
