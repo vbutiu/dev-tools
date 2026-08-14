@@ -80,10 +80,18 @@ const toolFooter = computed<string>(() => {
 const themeVars = useThemeVars();
 
 const linkTheme = useTheme();
+
+// ?raw=true strips the app chrome (sidebar/navbar/tool header/footer) so a tool can be embedded in an iframe.
+const isRawMode = computed(() => route.query.raw === 'true');
 </script>
 
 <template>
-  <BaseLayout>
+  <div v-if="isRawMode" class="tool-content-raw">
+    <Suspense>
+      <slot />
+    </Suspense>
+  </div>
+  <BaseLayout v-else>
     <div class="tool-layout">
       <div class="tool-header">
         <div flex flex-nowrap items-center justify-between>
@@ -143,6 +151,14 @@ const linkTheme = useTheme();
 </style>
 
 <style lang="less" scoped>
+.tool-content-raw {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
 .tool-privacy-icon {
   display: inline-block;
   height: 0.6em;
