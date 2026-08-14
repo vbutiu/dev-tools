@@ -38,10 +38,11 @@ jobs:
           run_install: true
 
       # This project is Vite/Vue (not Nuxt): build output is BASE_URL-driven `dist/`, not `.output/public`.
-      # Set the repository variable BASE_URL (e.g. "/dev-tools/") under Settings > Secrets and variables > Actions > Variables.
+      # Falls back to "/<repo-name>/" (the default GitHub Pages project-site subpath) when the
+      # repository variable BASE_URL isn't set; override it under Settings > Secrets and variables > Actions > Variables.
       - name: Build
         run: |
-          BASE_URL="${{ vars.BASE_URL }}" pnpm build
+          BASE_URL="${{ vars.BASE_URL || format('/{0}/', github.event.repository.name) }}" pnpm build
           cp dist/index.html dist/404.html
 
       - name: Setup Pages
