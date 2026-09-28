@@ -22,8 +22,8 @@ importers:
   .:
     dependencies:
       '@boxyhq/saml20':
-        specifier: ^1.16.0
-        version: 1.16.0
+        specifier: ^1.20.0
+        version: 1.20.0
       '@chenfengyuan/vue-barcode':
         specifier: ^2.0.2
         version: 2.0.2(jsbarcode@3.12.3)(vue@3.5.39(typescript@6.0.3))
@@ -1910,8 +1910,8 @@ packages:
   '@borewit/text-codec@0.2.2':
     resolution: {integrity: sha512-DDaRehssg1aNrH4+2hnj1B7vnUGEjU6OIlyRdkMd0aUdIUvKXrJfXsy8LVtXAy7DRvYVluWbMspsRhz2lcW0mQ==}
 
-  '@boxyhq/saml20@1.16.0':
-    resolution: {integrity: sha512-uSdGrZTv8O9bhcYDg6iwUXVGbBlbL1jTatdwhTowZu6jUInIwrq7txIvuDxH3j/iFD8d70xVc6zSAxP4T9XeOw==}
+  '@boxyhq/saml20@1.20.0':
+    resolution: {integrity: sha512-p2QdqMUXugwFC8mcsQV6YmQZUm6FWeQcPHEHWScrYTCPIhyoGsuXqbl78Usksrm+EYhLTsyZrhqLRx2REAxJnQ==}
 
   '@braintree/sanitize-url@7.1.2':
     resolution: {integrity: sha512-jigsZK+sMF/cuiB7sERuo9V7N9jx+dhmHHnQyDSVdpZwVutaBu7WvNYqMDLSgFgfB30n452TP3vjDAvFC973mA==}
@@ -5139,10 +5139,18 @@ packages:
     engines: {node: '>=10.0.0'}
     deprecated: this version has critical issues, please update to the latest version
 
+  '@xmldom/xmldom@0.8.15':
+    resolution: {integrity: sha512-/5NV/vDALVFDXgLmfsy9TRCBlKwO2LNBFzpzvb9iIj+jR+eSc6DLYYvVOdivT/jm7MtU6TebYuRmzEOI7w40UA==}
+    engines: {node: '>=10.0.0'}
+
   '@xmldom/xmldom@0.9.10':
     resolution: {integrity: sha512-A9gOqLdi6cV4ibazAjcQufGj0B1y/vDqYrcuP6d/6x8P27gRS8643Dj9o1dEKtB6O7fwxb2FgBmJS2mX7gpvdw==}
     engines: {node: '>=14.6'}
     deprecated: this version has critical issues, please update to the latest version
+
+  '@xmldom/xmldom@0.9.12':
+    resolution: {integrity: sha512-5AXjrcMClTryPe9LgZrygpB1lj7s0S9E0+W+AHaVKAVyHanafK86iPSvG5xHVSp/jC+VH1UXu0TAEmY279xH7A==}
+    engines: {node: '>=14.6'}
 
   '@xterm/xterm@5.5.0':
     resolution: {integrity: sha512-hqJHYaQb5OptNunnyAnkHyM8aCjZ1MEIDTQu1iIbbTD/xops91NB5yq1ZK/dC2JDbVWtF23zUtl9JE2NqwT87A==}
@@ -11471,12 +11479,12 @@ packages:
     engines: {node: '>=0.8'}
     hasBin: true
 
-  xml-crypto@6.1.2:
-    resolution: {integrity: sha512-leBOVQdVi8FvPJrMYoum7Ici9qyxfE4kVi+AkpUoYCSXaQF4IlBm1cneTK9oAxR61LpYxTx7lNcsnBIeRpGW2w==}
+  xml-crypto@6.3.0:
+    resolution: {integrity: sha512-UOFXhZf/paMcBYA9Gvr+XQQxLxfqoKTjfMkWJnPS0PcVEPcXdEn7etTbqONj0rwOtgBOlOAgB/0v4cNsR/hLWg==}
     engines: {node: '>=16'}
 
-  xml-encryption@4.0.1:
-    resolution: {integrity: sha512-ENtwvonaBs59ssASLh4HpfBAYfBBvl9+HudkfE71z9pTiNmXtyuyr50qmCW7o8/3xVh/aNosYYRjdZdm+fO09g==}
+  xml-encryption@6.0.1:
+    resolution: {integrity: sha512-hQSkWsiOKXxYB8FbSJhe/BRwobEt/lVcxzV699CdH7KLNv2nLEtNvkGkw5UTxYUkPQ3XQs65BvXtRfujJ/1OFA==}
 
   xml-formatter@3.7.0:
     resolution: {integrity: sha512-+8qTc3zv2UcJ1v9IsSIce37Dl4MQG14Cp7tWrwmy202UaI1wqRukw5QMX1JHsV+DX64yw77EgGsj2s5wGvuMbQ==}
@@ -11526,10 +11534,6 @@ packages:
   xpath-to-css@1.2.0:
     resolution: {integrity: sha512-jOSBw4iYbm9inNP0DbQB7cO0tPBfogG3oLA739eTO3WgJXAelLyZcFlCe2W/gBaYXT0pglXN6tJ7svFVaewBmA==}
     engines: {node: '>=4.0.0'}
-
-  xpath@0.0.32:
-    resolution: {integrity: sha512-rxMJhSIoiO8vXcWvSifKqhvV96GjiD5wYb8/QHdoRyQvraTpp4IEv944nhGausZZ3u7dhQXteZuZbaqfpB7uYw==}
-    engines: {node: '>=0.6.0'}
 
   xpath@0.0.33:
     resolution: {integrity: sha512-NNXnzrkDrAzalLhIUc01jO2mOzXGXh1JwPgkihcLLzw98c0WgYDmmjSh1Kl3wzaxSVWMuA+fe0WTWOBDWCBmNA==}
@@ -12394,13 +12398,14 @@ snapshots:
 
   '@borewit/text-codec@0.2.2': {}
 
-  '@boxyhq/saml20@1.16.0':
+  '@boxyhq/saml20@1.20.0':
     dependencies:
-      '@xmldom/xmldom': 0.9.10
-      xml-crypto: 6.1.2
-      xml-encryption: 4.0.1
+      '@xmldom/xmldom': 0.9.12
+      xml-crypto: 6.3.0
+      xml-encryption: 6.0.1
       xml2js: 0.6.2
       xmlbuilder: 15.1.1
+      xpath: 0.0.34
 
   '@braintree/sanitize-url@7.1.2': {}
 
@@ -15736,7 +15741,12 @@ snapshots:
 
   '@xmldom/xmldom@0.8.13': {}
 
-  '@xmldom/xmldom@0.9.10': {}
+  '@xmldom/xmldom@0.8.15': {}
+
+  '@xmldom/xmldom@0.9.10':
+    optional: true
+
+  '@xmldom/xmldom@0.9.12': {}
 
   '@xterm/xterm@5.5.0': {}
 
@@ -22859,17 +22869,16 @@ snapshots:
 
   xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz: {}
 
-  xml-crypto@6.1.2:
+  xml-crypto@6.3.0:
     dependencies:
       '@xmldom/is-dom-node': 1.0.1
-      '@xmldom/xmldom': 0.8.13
+      '@xmldom/xmldom': 0.8.15
       xpath: 0.0.33
 
-  xml-encryption@4.0.1:
+  xml-encryption@6.0.1:
     dependencies:
-      '@xmldom/xmldom': 0.8.13
+      '@xmldom/xmldom': 0.8.15
       escape-html: 1.0.3
-      xpath: 0.0.32
 
   xml-formatter@3.7.0:
     dependencies:
@@ -22894,7 +22903,7 @@ snapshots:
 
   xml2js@0.6.2:
     dependencies:
-      sax: 1.6.0
+      sax: 1.6.1
       xmlbuilder: 11.0.1
 
   xml@1.0.1: {}
@@ -22906,8 +22915,6 @@ snapshots:
   xmlchars@2.2.0: {}
 
   xpath-to-css@1.2.0: {}
-
-  xpath@0.0.32: {}
 
   xpath@0.0.33: {}
 

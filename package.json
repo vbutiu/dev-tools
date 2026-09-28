@@ -44,7 +44,7 @@
     "precommit": "pnpm install --ignore-scripts && pnpm lint:fix && pnpm typecheck"
   },
   "dependencies": {
-    "@boxyhq/saml20": "^1.16.0",
+    "@boxyhq/saml20": "^1.20.0",
     "@chenfengyuan/vue-barcode": "^2.0.2",
     "@codemirror/lang-cpp": "^6.0.3",
     "@codemirror/lang-css": "^6.3.1",
