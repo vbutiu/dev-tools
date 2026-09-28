@@ -117,7 +117,7 @@
     "@younestouati/playing-cards-standard-deck": "^6.0.1",
     "@zxcvbn-ts/core": "^3.0.4",
     "@zxcvbn-ts/language-common": "^3.0.4",
-    "@zxcvbn-ts/language-en": "^3.0.2",
+    "@zxcvbn-ts/language-en": "^4.1.1",
     "@zxing/library": "^0.23.0",
     "a11y-color-contrast": "^0.2.0",
     "abort-signal-polyfill": "^1.0.0",
