@@ -48,7 +48,7 @@ jobs:
           echo "$EOF" >> $GITHUB_OUTPUT
 
       - name: Create Release
-        uses: softprops/action-gh-release@v3.0.1
+        uses: softprops/action-gh-release@v3.0.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           files: dev-tools-${{ env.RELEASE_VERSION }}.zip
